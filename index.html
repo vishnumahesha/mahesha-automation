@@ -910,29 +910,6 @@
 </div>
 
 <!-- WHO THIS IS FOR -->
-<!-- EMAIL CAPTURE -->
-<div style="background:var(--ink); border-bottom:1px solid #222; padding:2.5rem 5rem;">
-  <div style="max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:center;">
-    <div>
-      <div style="font-family:var(--serif); font-size:1.05rem; font-weight:700; color:var(--paper); margin-bottom:0.3rem;">Not ready to book a call yet?</div>
-      <p style="font-size:0.82rem; color:rgba(245,240,232,0.4); line-height:1.5; margin:0;">Get the free checklist — every task category worth automating in a small business, ranked by time saved.</p>
-    </div>
-    <div style="display:flex; gap:0; flex-shrink:0;" id="email-form">
-      <input type="email" placeholder="your@email.com" id="email-input" style="background:#111; border:1px solid #333; border-right:none; color:var(--paper); font-family:var(--mono); font-size:0.75rem; padding:0.85rem 1.2rem; outline:none; width:230px; letter-spacing:0.04em;">
-      <button onclick="submitEmail()" style="background:var(--accent); color:white; border:none; font-family:var(--mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.85rem 1.4rem; cursor:pointer; white-space:nowrap; transition:background 0.2s;" onmouseover="this.style.background='#a83508'" onmouseout="this.style.background='var(--accent)'">Send it →</button>
-    </div>
-  </div>
-</div>
-<script>
-function submitEmail() {
-  const email = document.getElementById('email-input').value;
-  if (!email || !email.includes('@')) { document.getElementById('email-input').style.borderColor='#c8410a'; return; }
-  document.getElementById('email-form').innerHTML = '<div style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;color:var(--accent);text-transform:uppercase;padding:0.85rem 0;">✓ On its way — check your inbox.</div>';
-  console.log('Email captured:', email); // TODO: wire to email provider
-}
-document.getElementById('email-input')?.addEventListener('keydown', e => { if(e.key==='Enter') submitEmail(); });
-</script>
-
 
 <section style="padding: 5rem 5rem; border-bottom: 1px solid var(--rule); background: var(--ink);">
   <div class="fade-up" style="max-width:900px; margin: 0 auto; text-align:center;">
@@ -1120,9 +1097,9 @@ document.getElementById('email-input')?.addEventListener('keydown', e => { if(e.
 <div class="about-left fade-up">
     <div class="section-label">Who I am</div>
     <h2 class="about-title">
-      I know what<br>
-      you're thinking.<br>
-      <em>Here's why you're wrong.</em>
+      Yes, I'm 17.<br>
+      <em>Here's what</em><br>
+      that actually means.
     </h2>
     <p class="about-body">
       Yes, I'm 17. I'm Vishnu Mahesha, a student at <strong>Rouse High School</strong> and part of the <strong>AlphaX program at Alpha High School</strong> in Texas.
@@ -1176,177 +1153,15 @@ document.getElementById('email-input')?.addEventListener('keydown', e => { if(e.
 
 <!-- OPENCLAW -->
 <section class="openclaw-section" id="openclaw">
-
-  <!-- INTRO -->
   <div class="openclaw-header fade-up">
     <div>
-      <div class="section-label" style="color: var(--accent);">The technology</div>
-      <h2 class="openclaw-title">
-        What is<br>
-        <em>OpenClaw?</em>
-      </h2>
+      <div class="section-label" style="color:var(--accent);">The technology</div>
+      <h2 class="openclaw-title">What is<br><em>OpenClaw?</em></h2>
     </div>
     <p class="openclaw-desc">
-      OpenClaw is a custom AI agent that lives on a dedicated computer — your own machine or a VPS — and executes tasks autonomously on a schedule or on command. Think of it as a staff member who reports back to your phone the moment something's done or something goes wrong. No monthly SaaS fees. No shared servers. Your agent, your hardware, your data.
+      OpenClaw is the AI agent I built from scratch and run myself. It lives on a dedicated computer — your own machine or a cheap server — and handles tasks autonomously on a schedule or on command. No monthly SaaS subscription. No shared cloud. Your credentials stay on your hardware, your data never touches a third-party server, and every action it takes gets logged. Think of it as a staff member who works overnight and sends you a full report by morning.
     </p>
   </div>
-
-  <!-- HOW IT'S BUILT -->
-  <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:1px; background:#222; border:1px solid #222; margin-bottom:4rem;">
-
-    <div class="oc-stat fade-up">
-      <div style="font-size:1.5rem; margin-bottom:0.8rem;">🧠</div>
-      <div class="oc-label">An AI brain</div>
-      <p class="oc-desc">Powered by Claude, GPT-4, or any AI API of your choice. Claude is recommended for complex reasoning. Cheaper models can be layered in for repetitive tasks — so you spend less per job done.</p>
-    </div>
-
-    <div class="oc-stat fade-up">
-      <div style="font-size:1.5rem; margin-bottom:0.8rem;">👁️</div>
-      <div class="oc-label">Full control of your PC</div>
-      <p class="oc-desc">Can do almost anything a human can do on a computer — control the browser, open apps, manage files, run scripts, generate documents, send emails, interact with any software. If a human can do it on a screen, OpenClaw can too.</p>
-    </div>
-
-    <div class="oc-stat fade-up">
-      <div style="font-size:1.5rem; margin-bottom:0.8rem;">📲</div>
-      <div class="oc-label">A voice back to you</div>
-      <p class="oc-desc">Reports to you via Telegram (or any messaging app you prefer). Send a command from your phone, get a result. No dashboard to log into. Know the second something finishes — or fails.</p>
-    </div>
-
-    <div class="oc-stat fade-up">
-      <div style="font-size:1.5rem; margin-bottom:0.8rem;">🖥️</div>
-      <div class="oc-label">Requires dedicated hardware</div>
-      <p class="oc-desc">OpenClaw runs on a Mac Mini, Windows PC, or a cheap VPS ($5-20/month). It needs a machine that stays on. I'll set everything up — you just need to provide the computer or the server.</p>
-    </div>
-
-    <div class="oc-stat fade-up">
-      <div style="font-size:1.5rem; margin-bottom:0.8rem;">🔗</div>
-      <div class="oc-label">Multi-agent networks</div>
-      <p class="oc-desc">Deploy multiple specialized agents working in parallel. One researches while another writes while another posts. Tasks that take hours alone finish in minutes. Each agent has one job. It does it perfectly.</p>
-    </div>
-
-    <div class="oc-stat fade-up">
-      <div style="font-size:1.5rem; margin-bottom:0.8rem;">🛡️</div>
-      <div class="oc-label">Built-in guardrails</div>
-      <p class="oc-desc">The agent won't take irreversible actions without your approval. It won't expose your credentials. It won't fake results. Hard rules baked in — so it acts autonomously, but never recklessly.</p>
-    </div>
-
-  </div>
-
-  <!-- PROBLEMS SOLVED -->
-  <div style="margin-bottom: 2rem;" class="fade-up">
-    <div class="section-label" style="color: var(--accent);">The honest problems — and how I've solved them</div>
-    <p style="color: rgba(245,240,232,0.5); font-size:0.95rem; max-width:640px; line-height:1.7; margin-top:0.5rem;">Autonomous AI agents are powerful. They also come with real challenges most people don't talk about. Here's what they are — and what I've done about them.</p>
-  </div>
-
-  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1px; background:#222; border:1px solid #222; margin-bottom:5rem;" class="fade-up">
-
-    <div style="background:var(--ink); padding:2.5rem; transition:background 0.2s;" onmouseover="this.style.background='#0f0f0f'" onmouseout="this.style.background='var(--ink)'">
-      <div style="font-family:var(--mono); font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:#c8410a; margin-bottom:1rem;">Problem 01</div>
-      <h4 style="font-family:var(--serif); font-size:1.2rem; font-weight:700; color:var(--paper); margin-bottom:0.75rem;">Security risks</h4>
-      <p style="font-size:0.88rem; line-height:1.75; color:rgba(245,240,232,0.45); margin-bottom:1.2rem;">An agent with full access to your computer and accounts is a serious security liability if set up wrong. Credential exposure, unauthorized actions, data leaks — these are real failure modes.</p>
-      <div style="border-left:2px solid #c8410a; padding-left:1rem;">
-        <div style="font-family:var(--mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:#c8410a; margin-bottom:0.4rem;">How I've solved it</div>
-        <p style="font-size:0.85rem; line-height:1.7; color:rgba(245,240,232,0.6);">Encrypted credential storage, hard-coded guardrails that prevent irreversible actions without approval, audit logging on every operation, and approval gates for anything sensitive. Security architecture I've personally battle-tested.</p>
-      </div>
-    </div>
-
-    <div style="background:var(--ink); padding:2.5rem; transition:background 0.2s;" onmouseover="this.style.background='#0f0f0f'" onmouseout="this.style.background='var(--ink)'">
-      <div style="font-family:var(--mono); font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:#c8410a; margin-bottom:1rem;">Problem 02</div>
-      <h4 style="font-family:var(--serif); font-size:1.2rem; font-weight:700; color:var(--paper); margin-bottom:0.75rem;">Insane API costs</h4>
-      <p style="font-size:0.88rem; line-height:1.75; color:rgba(245,240,232,0.45); margin-bottom:1.2rem;">An unoptimized AI agent running autonomously can easily burn $1,500+ per month in API costs. Most automation setups have no cost controls — the bill just grows.</p>
-      <div style="border-left:2px solid #c8410a; padding-left:1rem;">
-        <div style="font-family:var(--mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:#c8410a; margin-bottom:0.4rem;">How I've solved it</div>
-        <p style="font-size:0.85rem; line-height:1.7; color:rgba(245,240,232,0.6);">Token usage optimized to the point where what would cost $1,500+/month runs for <strong style="color:var(--paper);">under $50</strong>. That's a 97% cost reduction — achieved through model routing, context compression, and smart task batching.</p>
-      </div>
-    </div>
-
-    <div style="background:var(--ink); padding:2.5rem; transition:background 0.2s;" onmouseover="this.style.background='#0f0f0f'" onmouseout="this.style.background='var(--ink)'">
-      <div style="font-family:var(--mono); font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:#c8410a; margin-bottom:1rem;">Problem 03</div>
-      <h4 style="font-family:var(--serif); font-size:1.2rem; font-weight:700; color:var(--paper); margin-bottom:0.75rem;">Silent failures</h4>
-      <p style="font-size:0.88rem; line-height:1.75; color:rgba(245,240,232,0.45); margin-bottom:1.2rem;">Automation breaks silently all the time — a PATH change, a site update, a scheduling bug. Without proper monitoring, you won't know until hours later when the damage is done.</p>
-      <div style="border-left:2px solid #c8410a; padding-left:1rem;">
-        <div style="font-family:var(--mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:#c8410a; margin-bottom:0.4rem;">How I've solved it</div>
-        <p style="font-size:0.85rem; line-height:1.7; color:rgba(245,240,232,0.6);">Real-time Telegram alerts the instant something stops working, health checks every few minutes, automatic failure recovery, and daily summary reports. You're always informed.</p>
-      </div>
-    </div>
-
-    <div style="background:var(--ink); padding:2.5rem; transition:background 0.2s;" onmouseover="this.style.background='#0f0f0f'" onmouseout="this.style.background='var(--ink)'">
-      <div style="font-family:var(--mono); font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:#c8410a; margin-bottom:1rem;">Problem 04</div>
-      <h4 style="font-family:var(--serif); font-size:1.2rem; font-weight:700; color:var(--paper); margin-bottom:0.75rem;">Requires dedicated hardware</h4>
-      <p style="font-size:0.88rem; line-height:1.75; color:rgba(245,240,232,0.45); margin-bottom:1.2rem;">OpenClaw isn't a cloud app you sign up for. It needs a computer that stays on — a Mac Mini, a PC, or a VPS. That's a real setup cost and a real technical barrier for most people.</p>
-      <div style="border-left:2px solid #c8410a; padding-left:1rem;">
-        <div style="font-family:var(--mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:#c8410a; margin-bottom:0.4rem;">How I've solved it</div>
-        <p style="font-size:0.85rem; line-height:1.7; color:rgba(245,240,232,0.6);">I handle the full setup and configuration. A VPS can run as low as $5-20/month. I'll walk you through hardware options and get everything deployed — you just need to show up to the call.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- WHAT IT CAN DO -->
-  <div style="margin-bottom: 2rem;" class="fade-up">
-    <div class="section-label" style="color: var(--accent);">What your OpenClaw agent can do</div>
-    <p style="color: rgba(245,240,232,0.5); font-size:0.95rem; max-width:600px; line-height:1.7; margin-top:0.5rem;">150+ integrated capabilities. Here's a sample of real systems we've built and deployed.</p>
-  </div>
-
-  <div class="openclaw-use-cases fade-up">
-    <div class="use-case">
-      <div class="uc-dot"></div>
-      <div class="uc-text">
-        <strong>Lead Generation Pipeline</strong>
-        <span>Finds prospects, enriches data, qualifies them, and sends personalized outreach — research to first contact, automated.</span>
-      </div>
-    </div>
-    <div class="use-case">
-      <div class="uc-dot"></div>
-      <div class="uc-text">
-        <strong>Competitor Intelligence Monitor</strong>
-        <span>Watches competitor pricing, product changes, and social activity daily. Sends a digest every morning.</span>
-      </div>
-    </div>
-    <div class="use-case">
-      <div class="uc-dot"></div>
-      <div class="uc-text">
-        <strong>Email Outreach Campaigns</strong>
-        <span>Researches prospects, writes personalized emails, sends them, tracks replies, follows up automatically.</span>
-      </div>
-    </div>
-    <div class="use-case">
-      <div class="uc-dot"></div>
-      <div class="uc-text">
-        <strong>Customer Onboarding Agent</strong>
-        <span>Handles intake forms, sends welcome sequences, sets up accounts, notifies your team — zero manual steps.</span>
-      </div>
-    </div>
-    <div class="use-case">
-      <div class="uc-dot"></div>
-      <div class="uc-text">
-        <strong>Appointment & Booking Automation</strong>
-        <span>Confirmations, reminders, rescheduling, follow-ups — your calendar manages itself.</span>
-      </div>
-    </div>
-    <div class="use-case">
-      <div class="uc-dot"></div>
-      <div class="uc-text">
-        <strong>E-commerce Operations Agent</strong>
-        <span>Tracks inventory, updates listings, monitors reviews, and flags issues before they become problems.</span>
-      </div>
-    </div>
-    <div class="use-case">
-      <div class="uc-dot"></div>
-      <div class="uc-text">
-        <strong>Document & Report Generation</strong>
-        <span>Auto-generates Word docs, spreadsheets, PDFs from live data — on a schedule, every time.</span>
-      </div>
-    </div>
-    <div class="use-case">
-      <div class="uc-dot"></div>
-      <div class="uc-text">
-        <strong>Multi-Agent Task Networks</strong>
-        <span>Specialized agents running in parallel — one researches, one writes, one posts, one reports. Done faster, cheaper.</span>
-      </div>
-    </div>
-  </div>
-
 </section>
 
 
@@ -1503,8 +1318,8 @@ document.getElementById('email-input')?.addEventListener('keydown', e => { if(e.
       <div class="pricing-note-tag" style="background:rgba(200,65,10,0.08); color:var(--accent); border-color:rgba(200,65,10,0.25);">✦ Premium</div>
       <div class="pricing-tier-label">Tier 3</div>
       <h3 class="pricing-card-title">Plug & Play</h3>
-      <div class="pricing-price" style="font-size:1.8rem;">Mac Mini + Shipping</div>
-      <div class="pricing-price-sub">+ Tier 2 service · quoted after call</div>
+      <div class="pricing-price" style="font-size:2.2rem;">From $3,629</div>
+      <div class="pricing-price-sub">hardware + full setup · exact quote after call</div>
       <p class="pricing-desc">I buy a Mac Mini, configure OpenClaw on it completely — API keys, Telegram, your custom automations, everything — then ship it directly to your door. You plug it into power and ethernet. It's already live. No setup. No technical friction. Nothing to configure.</p>
       <ul class="pricing-includes">
         <li>Mac Mini M2 (~$599) or M4 (~$799) — your choice</li>
@@ -1800,17 +1615,34 @@ document.getElementById('email-input')?.addEventListener('keydown', e => { if(e.
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Mahesha<span>.</span></div>
-  <div style="display:flex; flex-wrap:wrap; gap:1.5rem 3rem; align-items:center; justify-content:center; margin:1.5rem 0;">
-    <a href="https://twitter.com/VishnuMahesha09" target="_blank" class="footer-link">Twitter @VishnuMahesha09</a>
-    <a href="https://instagram.com/vishnu.atx" target="_blank" class="footer-link">Instagram @vishnu.atx</a>
-    <a href="https://tiktok.com/@vishnumahesha09" target="_blank" class="footer-link">TikTok @vishnumahesha09</a>
-    <a href="mailto:vishnumahesha09@gmail.com" class="footer-link">vishnumahesha09@gmail.com</a>
-    <a href="tel:5129778571" class="footer-link">(512) 977-8571</a>
-    <a href="https://calendly.com/vishnu-mahesha" target="_blank" class="footer-link">Book a call →</a>
+<footer style="background:var(--ink); border-top:1px solid #222; padding:5rem 5rem 3rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
+  <div>
+    <div style="font-family:var(--serif); font-size:2.5rem; font-weight:900; color:var(--paper); letter-spacing:-0.03em; margin-bottom:0.5rem;">Mahesha<span style="color:var(--accent);">.</span></div>
+    <p style="font-size:0.88rem; color:rgba(245,240,232,0.4); line-height:1.7; max-width:300px; margin-bottom:2rem;">AI automation for small businesses. Your agent, your hardware, your data.</p>
+    <a href="https://calendly.com/vishnu-mahesha" target="_blank" style="display:inline-block; background:var(--accent); color:white; font-family:var(--mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.85rem 1.8rem; text-decoration:none;">Book a Free Audit →</a>
   </div>
-  <div class="footer-copy">© 2026 Mahesha Automation</div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem 3rem;">
+    <div>
+      <div style="font-family:var(--mono); font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,240,232,0.3); margin-bottom:1.2rem;">Socials</div>
+      <div style="display:flex; flex-direction:column; gap:0.75rem;">
+        <a href="https://twitter.com/VishnuMahesha09" target="_blank" style="font-size:0.88rem; color:rgba(245,240,232,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='rgba(245,240,232,0.6)'">Twitter / X →</a>
+        <a href="https://instagram.com/vishnu.atx" target="_blank" style="font-size:0.88rem; color:rgba(245,240,232,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='rgba(245,240,232,0.6)'">Instagram →</a>
+        <a href="https://tiktok.com/@vishnumahesha09" target="_blank" style="font-size:0.88rem; color:rgba(245,240,232,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='rgba(245,240,232,0.6)'">TikTok →</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--mono); font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,240,232,0.3); margin-bottom:1.2rem;">Contact</div>
+      <div style="display:flex; flex-direction:column; gap:0.75rem;">
+        <a href="mailto:vishnumahesha09@gmail.com" style="font-size:0.88rem; color:rgba(245,240,232,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='rgba(245,240,232,0.6)'">vishnumahesha09@gmail.com</a>
+        <a href="tel:5129778571" style="font-size:0.88rem; color:rgba(245,240,232,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='rgba(245,240,232,0.6)'">(512) 977-8571</a>
+        <a href="https://calendly.com/vishnu-mahesha" target="_blank" style="font-size:0.88rem; color:rgba(245,240,232,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='rgba(245,240,232,0.6)'">Book a call →</a>
+      </div>
+    </div>
+  </div>
+  <div style="grid-column:1/-1; border-top:1px solid #222; padding-top:2rem; display:flex; justify-content:space-between; align-items:center;">
+    <div style="font-family:var(--mono); font-size:0.6rem; letter-spacing:0.1em; color:rgba(245,240,232,0.25); text-transform:uppercase;">© 2026 Mahesha Automation</div>
+    <div style="font-family:var(--mono); font-size:0.6rem; letter-spacing:0.1em; color:rgba(245,240,232,0.25); text-transform:uppercase;">Texas, USA</div>
+  </div>
 </footer>
 
 <style>
@@ -1837,5 +1669,68 @@ document.getElementById('email-input')?.addEventListener('keydown', e => { if(e.
     el.style.transitionDelay = `${(i % 3) * 0.1}s`;
   });
 </script>
+<!-- FLOATING CONTACT BUTTON -->
+<div id="contact-fab" style="position:fixed; bottom:2rem; right:2rem; z-index:9999; display:flex; flex-direction:column; align-items:flex-end; gap:0.75rem;">
+
+  <!-- Contact options (hidden by default) -->
+  <div id="contact-options" style="display:none; flex-direction:column; gap:0.5rem; align-items:flex-end;">
+    <a href="https://calendly.com/vishnu-mahesha" target="_blank" class="fab-option">
+      <span>📅 Book a Call</span>
+    </a>
+    <a href="mailto:vishnumahesha09@gmail.com" class="fab-option">
+      <span>✉️ Email Me</span>
+    </a>
+    <a href="tel:5129778571" class="fab-option">
+      <span>📞 (512) 977-8571</span>
+    </a>
+    <a href="https://twitter.com/VishnuMahesha09" target="_blank" class="fab-option">
+      <span>𝕏 Twitter</span>
+    </a>
+    <a href="https://instagram.com/vishnu.atx" target="_blank" class="fab-option">
+      <span>📸 Instagram</span>
+    </a>
+  </div>
+
+  <button onclick="toggleContact()" id="fab-btn" style="background:var(--ink); border:1px solid #333; color:var(--paper); cursor:pointer; display:flex; align-items:center; gap:0.5rem; padding:0.75rem 1.4rem; box-shadow:0 4px 20px rgba(0,0,0,0.35); transition:background 0.2s, border-color 0.2s; font-family:var(--serif); font-size:1rem; font-weight:700; letter-spacing:-0.01em;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="if(!fabOpen)this.style.borderColor='#333'">
+    <span id="fab-label">Contact</span>
+  </button>
+</div>
+
+<style>
+  .fab-option {
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    padding: 0.65rem 1.2rem;
+    border: 1px solid #333;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .fab-option:hover {
+    background: #111;
+    border-color: var(--accent);
+    color: var(--paper);
+  }
+</style>
+
+<script>
+  let fabOpen = false;
+  function toggleContact() {
+    fabOpen = !fabOpen;
+    const opts = document.getElementById('contact-options');
+    const btn = document.getElementById('fab-btn');
+    if (fabOpen) {
+      opts.style.display = 'flex';
+      btn.style.borderColor = 'var(--accent)';
+    } else {
+      opts.style.display = 'none';
+      btn.style.borderColor = '#333';
+    }
+  }
+</script>
+
 </body>
 </html>
